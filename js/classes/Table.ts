@@ -1,3 +1,4 @@
+/// <reference path='Order.ts'/>
 
  class Table {
    public id: Number;

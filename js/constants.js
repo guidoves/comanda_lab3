@@ -1,3 +1,3 @@
-const URL_SERVER = 'http://localhost/workspace/comanda/public';
+const URL_SERVER = 'http://localhost:80/workspace/comanda/public';
 
-const ESTADO_PEDIDOS = ['ESPERANDO PEDIDO', 'CLIENTE COMIENDO', 'CLIENTE PAGANDO', 'CERRADA'];
+const ESTADO_PEDIDOS = ['CLIENTE ESPERANDO', 'CLIENTE COMIENDO', 'CLIENTE PAGANDO', 'CERRADA'];

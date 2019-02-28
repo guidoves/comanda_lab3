@@ -95,6 +95,13 @@
                 url : URL_SERVER + '/login',
                 data,
                 success: function(res){
+                    // data delete
+                    localStorage.clear('token');
+                    localStorage.clear('user_id');
+                    localStorage.clear('user_name');
+                    localStorage.clear('role');
+
+                    // set data
                     localStorage.setItem('token', res['token']);
                     localStorage.setItem('user_id', res['user']['id']);
                     localStorage.setItem('user_name', res['user']['user_name']);
