@@ -220,15 +220,6 @@ function create_modal(id) {
 
                         </div>
 
-                        <hr>
-
-                        <div class="col-12 row my-2">
-                            <div class="col-12">
-                                <button>Imprimir Identificación</button>
-                                <button>Subir Foto</button>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -258,6 +249,7 @@ function new_order(comanda_id, id) {
         data: { comanda_id, menu_id },
         headers
     }).done((res) => {
+        reload();
     });
 }
 function load_orders(data, id) {

@@ -25,7 +25,8 @@
                 <input class="form-control" type="date" name="" id="">
             </div>
             <div class="col">
-                <select onchange="" class="custom-select custom-select-sm" name="" id="">
+                <select onchange="load_operations(this.value)" class="custom-select custom-select-sm" name="" id="">
+                    <option disabled selected value="">Elija...</option>
                     <option value="EMPLEADOS">Empleados</option>
                     <option value="PEDIDOS">Pedidos</option>
                     <option value="MESAS">Mesas</option>                 
@@ -36,6 +37,9 @@
                 </select>
             </div>
             <div class="col"><button class="btn btn-sm btn-success">Buscar</button></div>
+        </div>
+        <div class="row">
+
         </div>
 
     </div>
@@ -49,14 +53,44 @@
     var exports = {}
     
     function load_operations(value){
-        
-        var opers = [];
+        console.log(value);
+        let opers = [];
+        let html = ``;
 
-        if(value == 'Empleados'){
-            opers.push()
+        if(value == 'EMPLEADOS'){
+            html+= `
+                <option value="/users/log_login">Dias y horarios de logueo</option>
+                <option>Operaciones de todos por sector</option>
+                <option>Operaciones de todos por sector p/e</option>
+                <option>Cantidad de operaciones</option>
+            `;
+        }
+        else if(value == 'PEDIDOS'){
+            html+= `
+            <option>Mas vendido</option>
+            <option>Menos vendido</option>
+            <option>Tiempo demorado</option>
+            <option>Cancelados</option>
+            `;load_operations
+        }
+        else if(value == 'MESAS'){
+            html+= `
+            <option>Mas usada</option>
+            <option>Menos usada</option>
+            <option>Mayor facturacion</option>
+            <option>Menor facturacion</option>
+            <option>Factura mayor importe</option>
+            <option>Factura menor importe</option>
+            `;
         }
         
-        $('#operation')
+        $('#operation').html(html);
+    }
+
+    function buscar(){
+
+
+
     }
     
     </script>

@@ -12,7 +12,7 @@ function user_validate(){
         type: 'post',
         data,
         success: (res) => {
-            console.log(res);
+            return res.role;
         },
         error: (err) => {
             window.location.href = '/login.html'

@@ -18,17 +18,6 @@ var header = `<div>
             <li class="nav-item">
                 <a class="nav-link" href="./employees.html">Pedidos</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Administración
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="./estadisticas.html">Estadísticas</a>
-                    <a class="dropdown-item" href="#">Mesas</a>
-                    <a class="dropdown-item" href="#">Menú</a>
-                </div>
-            </li>
         </ul>` : `<ul class="navbar-nav mr-auto"></ul>`}
         <div class="form-inline align-right my-2 my-lg-0">
             <button onclick="log_out()" class="btn btn-outline-danger my-2 my-sm-0">Logout</button>
