@@ -25,14 +25,15 @@
                 <input class="form-control" type="date" name="" id="">
             </div>
             <div class="col">
-                <select class="custom-select custom-select-sm" name="" id="">
-                    <option value="">Empleados</option>
-                    <option value="">Pedidos</option>
-                    <option value="">Mesas</option>                 
+                <select onchange="" class="custom-select custom-select-sm" name="" id="">
+                    <option value="EMPLEADOS">Empleados</option>
+                    <option value="PEDIDOS">Pedidos</option>
+                    <option value="MESAS">Mesas</option>                 
                 </select>
             </div>
             <div class="col">
-                <select class="custom-select custom-select-sm" name="" id=""></select>
+                <select class="custom-select custom-select-sm" name="" id="operation">
+                </select>
             </div>
             <div class="col"><button class="btn btn-sm btn-success">Buscar</button></div>
         </div>
@@ -44,7 +45,21 @@
 
 
 
-    <script>var exports = {}</script>
+    <script>
+    var exports = {}
+    
+    function load_operations(value){
+        
+        var opers = [];
+
+        if(value == 'Empleados'){
+            opers.push()
+        }
+        
+        $('#operation')
+    }
+    
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
