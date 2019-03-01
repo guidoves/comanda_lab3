@@ -35,7 +35,7 @@ function all_orders() {
                 <td>${o.status}</td>
                 <td>${o.user_id ? o.user_id : 'SIN ASIGNAR'}</td>
                 <td>${o.estimated_time ? o.estimated_time : 'SIN ASIGNAR'}</td>
-                <td>${o.status == 'PENDIENTE' ? `<button data-backdrop="static" data-toggle="modal" data-target="#modal_employee_${o.id}" class="btn btn-sm btn-success">Comenzar pedido</button>` : `<button data-backdrop="static" data-toggle="modal" data-target="#modal_employee_${o.id}" class="btn btn-sm btn-danger">Finalizar pedido</button>`}</td>
+                <td>${o.status == 'PENDIENTE' ? `<button data-backdrop="static" data-toggle="modal" data-target="#modal_employee_${o.id}" class="btn btn-sm btn-success">Comenzar pedido</button>` : `${o.status != 'LISTO PARA SERVIR' ? `<button onclick="update_status_order(${o.id}, 'LISTO PARA SERVIR')" class="btn btn-sm btn-warning">Listo</button>` : `<button onclick="update_status_order(${o.id}, 'EN PREPARACION')" class="btn btn-sm btn-primary">Trabajando</button>`}<button data-backdrop="static" data-toggle="modal" data-target="#modal_employee_${o.id}" class="btn btn-sm btn-danger">Finalizar pedido</button>`}</td>
                 </tr>
             `;
             create_modal_employees(o.id, o.status == 'PENDIENTE');
@@ -105,5 +105,13 @@ function end_order(order_id) {
         headers,
         data: { order_id },
         type: 'POST'
+    }).done((res) => { reload_employee(); });
+}
+function update_status_order(order_id, status) {
+    $.ajax({
+        url: URL_SERVER + '/orders/update_status',
+        type: 'POST',
+        headers,
+        data: { order_id, status }
     }).done((res) => { reload_employee(); });
 }
