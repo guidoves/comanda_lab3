@@ -56,24 +56,36 @@
                     </div>
                 </nav>
             </div>
-            <div class="row">
 
-                <div class="col">
-                    <table class='table'>
-                        <thead>
-                            <th>Pedido</th>
-                            <th>Estado</th>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
+        </header>
+        <section class="my-2 row">
+
+            <div class="col-12">
+                <h2> Pedidos </h2>
 
             </div>
 
+            <div class="col-12">
+                <table class='table'>
+                    <thead>
+                        <th>Menú</th>
+                        <th>Estado</th>
+                        <th>Responsable</th>
+                        <th>Tiempo de preparación</th>
+                        <th>Acción</th>
+                    </thead>
+                    <tbody id="table_orders">
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
     </div>
 
-
+    <!-- Modal -->
+    <div id="modals_employee">
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -84,10 +96,8 @@
         integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp"
         crossorigin="anonymous"></script>
     <script src="./js/constants.js"></script>
-    <script src="./js/classes/Table.js"></script>
-    <script src="./js/classes/Comanda.js"></script>
-    <script src="./js//classes/Menu.js"></script>
     <script src="./js//classes/Order.js"></script>
+    <script src="./js//employees.js"></script>
     <script>
         var exports = {}
         var role = localStorage.getItem('role');

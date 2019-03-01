@@ -45,7 +45,6 @@ function get_data() {
                 $.ajax({
                     url: URL_SERVER + '/comanda/all_activate'
                 }).done((res) => {
-                    console.log(JSON.parse(res['comandas'][0].orders));
                     for (const c of res['comandas']) {
                         let new_comanda = new Comanda(c.id, c.client_name, JSON.parse(c.orders), c.amount, c.opinion, c.identifier, c.table_id, c.date, c.photo, c.mozo_id, c.status);
                         comandas.push(new_comanda);
